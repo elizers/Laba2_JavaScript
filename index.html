@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href=style.css>
+    <script defer type="text/javascript" src="Table.js"></script>
+    <title>Супер таблица</title>
+  </head>
+
+  <body>
+    <form id="formAddPupuls" >
+      <fieldset>
+      <legend>Добавление ученика</legend>
+          <ul>
+              <li>
+                  <label for="surnamePupil">Фамилия ученика:</label>
+                  <input type="text" name="surnamePupil" id="surnamePupil" value="" size="15" tabindex="1" />
+              </li>
+              <li>
+                  <label for="scoreMath">Оценка по математике:</label>
+                  <input type="text" name="scoreMath" id="scoreMath" value="" size="15" tabindex="2" />
+              </li>
+              <li>
+                  <label for="scoreRus">Оценка по русскому:</label>
+                  <input type="text" name="scoreRus" id="scoreRus" value="" size="15" tabindex="3" />
+              </li>
+              <li>
+                <label for="scoreRead">Оценка по чтению:</label>
+                <input type="text" name="scoreRead" id="scoreRead" value="" size="15" tabindex="3" />
+              </li>
+                <input type="submit" name="btn" value="Добавить" tabindex="4" />
+        </ul>
+      </fieldset>
+      </form>
+
+      <table id="tableData">
+        <thead>
+          <tr>
+            <th dataType = "text">Фамилия ученика</th>
+            <th dataType = "integer">Оценка по математике</th>
+            <th dataType = "integer">Оценка по русскому языку</th>
+            <th dataType = "integer">Оценка по чтению</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Иванов</td>
+            <td>4</td>
+            <td>4</td>
+            <td>3</td>
+            <td>
+              <input type="button" name="dlt" value="X" onclick= "deleteRow(this)">
+            </td>
+          </tr>
+          <tr>
+            <td>Сидоров</td>
+            <td>5</td>
+            <td>5</td>
+            <td>4</td>
+            <td>
+              <input type="button" name="dlt" value="X" onclick="deleteRow(this)">
+            </td>
+          </tr>
+          <tr>
+            <td>Петров</td>
+            <td>4</td>
+            <td>5</td>
+            <td>3</td>
+            <td>
+              <input type="button" name="dlt" value="X" onclick="deleteRow(this)">
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+  </body>
+</html>
