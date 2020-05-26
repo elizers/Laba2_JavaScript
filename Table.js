@@ -50,3 +50,41 @@ function deleteRow(btn) {
   var row = btn.parentNode.parentNode;
   row.parentNode.removeChild(row);
 }
+
+//сортировка таблицы
+let colIndex = -1;
+
+const sortTable = function (index, type, isSorted){
+  const tbody = table.querySelector('tbody');
+
+  const compare = function (rowA, rowB){
+    const rowDataA = rowA.cells[index].innerHTML;
+    const rowDataB = rowB.cells[index].innerHTML;
+
+    switch (type) {
+      case 'integer':
+        return rowDataA - rowDataB;
+        break;
+      case 'text':
+        if (rowDataA < rowDataB) 
+          return -1;
+        else
+          if (rowDataA > rowDataB) 
+            return 1;
+        return 0;
+        break;
+    }
+  }
+
+  let rows = [].slice.call(tbody.rows);
+  rows.sort(compare);
+  if (isSorted)
+    rows.reverse();
+
+  table.removeChild(tbody);
+  for (let i = 0; i < rows.length; i++){
+    tbody.appendChild(rows[i]);
+  }
+
+  table.appendChild(tbody);
+}
